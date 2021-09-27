@@ -9,6 +9,12 @@ GPIO.setup(p1, GPIO.OUT)
 GPIO.setup(p2, GPIO.OUT) 
 GPIO.setup(p3, GPIO.OUT) 
 
+f = 1 # frequency (Hz)
+dc = 50 # duty cycle (%)
+pwm1 = GPIO.PWM(p1,f)
+pwm2 = GPIO.PWM(p2,f)
+pwm3 = GPIO.PWM(p3,f)
+
 try:
   while True:
     GPIO.output(p1,0)
