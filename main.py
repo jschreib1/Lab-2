@@ -20,7 +20,9 @@ inp1 = 23
 inp2 = 24
 GPIO.setup(p1, GPIO.OUT) 
 GPIO.setup(p2, GPIO.OUT) 
-GPIO.setup(p3, GPIO.OUT) 
+GPIO.setup(p3, GPIO.OUT)
+GPIO.setup(inp1, GPIO.IN) 
+GPIO.setup(inp2, GPIO.IN)  
 
 f = 1000 # frequency (Hz)
 dc = 50 # duty cycle (%)
@@ -31,23 +33,23 @@ pwm3 = GPIO.PWM(p3,f)
 #Event Detection for pin 2
 GPIO.add_event_detect(inp1, 
 GPIO.RISING,
-callback=callback_fn, 
+callback=callback_fn(p2), 
 bouncetime=100)
 
 GPIO.add_event_detect(inp1, 
 GPIO.FALLING,
-callback=callback_fn, 
+callback=callback_fn(p2), 
 bouncetime=100)
 
 #Event Detect for pin 3
 GPIO.add_event_detect(inp2, 
 GPIO.RISING,
-callback=callback_fn, 
+callback=callback_fn(p3), 
 bouncetime=100)
 
 GPIO.add_event_detect(inp2, 
 GPIO.FALLING,
-callback=callback_fn, 
+callback=callback_fn(p3), 
 bouncetime=100)
 
 try:
