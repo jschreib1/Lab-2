@@ -15,7 +15,7 @@ def callback_fn(pin):
 GPIO.setmode(GPIO.BCM) # BCM for GPIO *port* numbering
 p1 = 4
 p2 = 17
-p3 = 18
+p3 = 13
 inp1 = 23
 inp2 = 24
 GPIO.setup(p1, GPIO.OUT) 
