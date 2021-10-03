@@ -67,4 +67,5 @@ except KeyboardInterrupt:
 except Exception as e:
   print('\ne')
 
-GPIO.cleanup()
+finally:
+  GPIO.cleanup()
