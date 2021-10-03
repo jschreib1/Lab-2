@@ -25,8 +25,8 @@ inp2 = 24
 GPIO.setup(p1, GPIO.OUT) 
 GPIO.setup(p2, GPIO.OUT) 
 GPIO.setup(p3, GPIO.OUT)
-GPIO.setup(inp1, GPIO.IN) 
-GPIO.setup(inp2, GPIO.IN)  
+GPIO.setup(inp1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) 
+GPIO.setup(inp2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)  
 
 f = 1000 # frequency (Hz)
 dc = 50 # duty cycle (%)
