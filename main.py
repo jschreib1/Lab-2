@@ -5,7 +5,7 @@ GPIO.setwarnings(False)
 def callback_fn(p):
   #ramp up
   #print('Registered')
-  if p == inp1:
+  if p == inp2:
     print('switch 1')
     pwm2.start(0) # initiate PWM at 0% duty cycle
     for dc in range(51): #loop duty cycle from 0 to 100
@@ -16,7 +16,7 @@ def callback_fn(p):
       pwm2.ChangeDutyCycle(51-d)
       sleep(0.01)
       pwm2.stop()
-  elif p == inp2:
+  elif p == inp1:
     print('switch 2')
     pwm3.start(0) # initiate PWM at 0% duty cycle
     for dc in range(51): #loop duty cycle from 0 to 100
