@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO #import RPi.GPIO module
 from time import sleep # import time.sleep()
+GPIO.setwarnings(False)
 
 def callback_fn(p):
   #ramp up
