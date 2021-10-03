@@ -11,7 +11,7 @@ def callback_fn(p):
     sleep(0.01)
   #ramp down
   for d in range(51):
-    pwm2.ChangeDutyCycle(100-d)
+    pwm2.ChangeDutyCycle(51-d)
     sleep(0.01)
   pwm2.stop()
 
