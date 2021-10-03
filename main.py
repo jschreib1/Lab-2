@@ -16,8 +16,8 @@ GPIO.setmode(GPIO.BCM) # BCM for GPIO *port* numbering
 p1 = 4
 p2 = 17
 p3 = 18
-#input pin 1
-#input pin 2
+inp1 = 23
+inp2 = 24
 GPIO.setup(p1, GPIO.OUT) 
 GPIO.setup(p2, GPIO.OUT) 
 GPIO.setup(p3, GPIO.OUT) 
@@ -29,23 +29,23 @@ pwm2 = GPIO.PWM(p2,f)
 pwm3 = GPIO.PWM(p3,f)
 
 #Event Detection for pin 2
-GPIO.add_event_detect(23, 
+GPIO.add_event_detect(inp1, 
 GPIO.RISING,
 callback=callback_fn, 
 bouncetime=100)
 
-GPIO.add_event_detect(23, 
+GPIO.add_event_detect(inp1, 
 GPIO.FALLING,
 callback=callback_fn, 
 bouncetime=100)
 
 #Event Detect for pin 3
-GPIO.add_event_detect(24, 
+GPIO.add_event_detect(inp2, 
 GPIO.RISING,
 callback=callback_fn, 
 bouncetime=100)
 
-GPIO.add_event_detect(24, 
+GPIO.add_event_detect(inp2, 
 GPIO.FALLING,
 callback=callback_fn, 
 bouncetime=100)
