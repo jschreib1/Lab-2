@@ -4,15 +4,16 @@ GPIO.setwarnings(False)
 
 def callback_fn(p):
   #ramp up
-  pwm1.start(0) # initiate PWM at 0% duty cycle
+  print('Registered')
+  pwm2.start(0) # initiate PWM at 0% duty cycle
   for dc in range(101): #loop duty cycle from 0 to 100
-    pwm1.ChangeDutyCycle(dc)   # set duty cycle
+    pwm2.ChangeDutyCycle(dc)   # set duty cycle
     sleep(0.01)
   #ramp down
   for d in range(101):
-    pwm1.ChangeDutyCycle(100-d)
+    pwm2.ChangeDutyCycle(100-d)
     sleep(0.01)
-  pwm1.stop()
+  pwm2.stop()
 
 GPIO.setmode(GPIO.BCM) # BCM for GPIO *port* numbering
 pins = {}
