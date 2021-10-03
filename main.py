@@ -1,15 +1,15 @@
 import RPi.GPIO as GPIO #import RPi.GPIO module
 from time import sleep # import time.sleep()
 
-def callback_fn(pin):
+def callback_fn(p):
   #ramp up
-  pin.start(0) # initiate PWM at 0% duty cycle
+  p.start(0) # initiate PWM at 0% duty cycle
   for dc in range(101): #loop duty cycle from 0 to 100
-    pin.ChangeDutyCycle(dc)   # set duty cycle
+    p.ChangeDutyCycle(dc)   # set duty cycle
     sleep(0.01)
   #ramp down
   for d in range(101):
-    pin.ChangeDutyCycle(100-d)
+    p.ChangeDutyCycle(100-d)
     sleep(0.01)
 
 GPIO.setmode(GPIO.BCM) # BCM for GPIO *port* numbering
