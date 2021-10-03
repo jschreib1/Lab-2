@@ -11,6 +11,7 @@ def callback_fn(p):
   for d in range(101):
     pwm1.ChangeDutyCycle(100-d)
     sleep(0.01)
+  pwm1.stop()
 
 GPIO.setmode(GPIO.BCM) # BCM for GPIO *port* numbering
 pins = {}
@@ -37,22 +38,24 @@ GPIO.RISING,
 callback=callback_fn(p2), 
 bouncetime=100)
 
+'''
 GPIO.add_event_detect(inp1, 
 GPIO.FALLING,
 callback=callback_fn(p2), 
 bouncetime=100)
-
+'''
 #Event Detect for pin 3
 GPIO.add_event_detect(inp2, 
 GPIO.RISING,
 callback=callback_fn(p3), 
 bouncetime=100)
 
+'''
 GPIO.add_event_detect(inp2, 
 GPIO.FALLING,
 callback=callback_fn(p3), 
 bouncetime=100)
-
+'''
 try:
   while True:
     GPIO.output(p1,0)
