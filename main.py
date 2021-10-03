@@ -32,7 +32,7 @@ p1 = 4
 p2 = 17
 p3 = 13
 inp1 = 23
-inp2 = 24
+inp2 = 16
 GPIO.setup(p1, GPIO.OUT) 
 GPIO.setup(p2, GPIO.OUT) 
 GPIO.setup(p3, GPIO.OUT)
