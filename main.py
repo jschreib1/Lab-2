@@ -36,7 +36,7 @@ pwm3 = GPIO.PWM(p3,f)
 #Event Detection for pin 2
 GPIO.add_event_detect(inp1, 
 GPIO.RISING,
-callback=callback_fn(p2), 
+callback=callback_fn, 
 bouncetime=100)
 
 '''
@@ -48,7 +48,7 @@ bouncetime=100)
 #Event Detect for pin 3
 GPIO.add_event_detect(inp2, 
 GPIO.RISING,
-callback=callback_fn(p3), 
+callback=callback_fn, 
 bouncetime=100)
 
 '''
