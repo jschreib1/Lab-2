@@ -3,16 +3,17 @@ from time import sleep # import time.sleep()
 
 def callback_fn(p):
   #ramp up
-  p.start(0) # initiate PWM at 0% duty cycle
+  pwm1.start(0) # initiate PWM at 0% duty cycle
   for dc in range(101): #loop duty cycle from 0 to 100
-    p.ChangeDutyCycle(dc)   # set duty cycle
+    pwm1.ChangeDutyCycle(dc)   # set duty cycle
     sleep(0.01)
   #ramp down
   for d in range(101):
-    p.ChangeDutyCycle(100-d)
+    pwm1.ChangeDutyCycle(100-d)
     sleep(0.01)
 
 GPIO.setmode(GPIO.BCM) # BCM for GPIO *port* numbering
+pins = {}
 p1 = 4
 p2 = 17
 p3 = 13
