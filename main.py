@@ -14,6 +14,7 @@ def callback_fn(p):
     for d in range(51):
       pwm2.ChangeDutyCycle(51-d)
       sleep(0.01)
+      pwm2.stop()
   elif p == inp2:
     pwm3.start(0) # initiate PWM at 0% duty cycle
     for dc in range(51): #loop duty cycle from 0 to 100
@@ -23,7 +24,7 @@ def callback_fn(p):
     for d in range(51):
       pwm3.ChangeDutyCycle(51-d)
       sleep(0.01)
-    pwm3.stop()
+      pwm3.stop()
 
 GPIO.setmode(GPIO.BCM) # BCM for GPIO *port* numbering
 pins = {}
